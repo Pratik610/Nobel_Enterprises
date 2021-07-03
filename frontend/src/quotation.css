@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@500&display=swap');
+
+.nobel {
+	font-weight: 900 !important;
+	color: rgb(143, 61, 163) !important;
+	font-family: 'Noto Sans', sans-serif !important;
+}
+
+.Nobelname {
+	font-size: 65px;
+	font-weight: 900;
+	color: rgb(143, 61, 163);
+}
+.nobelTo {
+	font-size: 25px;
+	font-weight: 900;
+}
+.blue {
+	color: rgb(143, 61, 163) !important;
+}
+
+.shopact {
+	font-size: medium;
+}
+
+.table-items {
+	width: 200vw;
+	font-size: 22px;
+}
+.footer {
+	font-size: 16px !important;
+}
+
+.border-blue {
+	border: 2px solid rgb(143, 61, 163);
+	border-radius: 10px;
+}
+.bottom-blue {
+	border-bottom: 2px solid rgb(143, 61, 163);
+}
+.top-blue {
+	border-top: 2px solid rgb(143, 61, 163);
+}
+.right-blue {
+	border-right: 2px solid rgb(143, 61, 163);
+}
+.left-blue {
+	border-left: 2px solid rgb(143, 61, 163);
+}
+
+/* ................................................................... */
+
+.akshar {
+	font-weight: 900 !important;
+	color: rgb(119, 23, 31) !important;
+	font-family: 'Karma', serif;
+}
+
+.Aksharname {
+	font-size: 65px;
+	font-weight: 900;
+	color: rgb(119, 23, 31);
+}
+.aksharTo {
+	font-size: 25px;
+	font-weight: 900;
+}
+
+.red {
+	color: rgb(119, 23, 31);
+}
+
+.border-red {
+	border: 2px solid rgb(119, 23, 31);
+	border-radius: 10px;
+}
+.bottom-red {
+	border-bottom: 2px solid rgb(119, 23, 31);
+}
+.top-red {
+	border-top: 2px solid rgb(119, 23, 31);
+}
+.right-red {
+	border-right: 2px solid rgb(119, 23, 31);
+}
+.left-red {
+	border-left: 2px solid rgb(119, 23, 31);
+}

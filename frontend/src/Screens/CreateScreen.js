@@ -5,6 +5,7 @@ import axios from 'axios'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { v4 as uuidv4 } from 'uuid'
 import { createQuotation } from '../Actions/quotationActions.js'
+import { QUOTATION_CREATE_RESET } from '../Constants/quotationConstants.js'
 
 const AddItemScreen = ({ history }) => {
 	const [items, setItems] = useState([])
@@ -44,6 +45,9 @@ const AddItemScreen = ({ history }) => {
 
 	if (quotation) {
 		history.push(`/print/${quotation._id}`)
+		dispatch({
+			type: QUOTATION_CREATE_RESET,
+		})
 	}
 
 	// add item to list
@@ -122,7 +126,7 @@ const AddItemScreen = ({ history }) => {
 							className='btn d-block p-2 pr-4 pl-4 btn-outline-dark mb-3'
 							onClick={() => getItemsFromLocalStorage()}
 						>
-							Get Previous Items
+							Get last Items
 						</button>
 						<button
 							className='btn d-block p-2 pr-4 pl-4 btn-outline-warning mb-3'

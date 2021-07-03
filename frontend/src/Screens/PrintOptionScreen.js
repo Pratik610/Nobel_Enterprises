@@ -22,6 +22,13 @@ const HomeScreen = ({ history, match }) => {
 				<meta name='viewport' content='width=device-width' />
 			</Helmet>
 			<Header title='Print' />
+
+			<button
+				className='btn d-block p-2 pr-4 pl-4 btn-outline-dark mb-3'
+				onClick={() => window.history.back()}
+			>
+				Back
+			</button>
 			<div className='main'>
 				<Link to={`/print/nobel/${id}`} className='m-2'>
 					<button

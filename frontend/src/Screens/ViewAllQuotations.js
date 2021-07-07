@@ -2,7 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from '../Components/Header'
 import { Link } from 'react-router-dom'
-import { viewQuotations } from '../Actions/quotationActions.js'
+import {
+	viewQuotations,
+	deleteQuotationByID,
+} from '../Actions/quotationActions.js'
 
 const ViewAllQuotations = ({ history }) => {
 	const dispatch = useDispatch()
@@ -16,9 +19,19 @@ const ViewAllQuotations = ({ history }) => {
 	const viewAllQuotation = useSelector((state) => state.viewAllQuotation)
 	const { loading, quotationList, error } = viewAllQuotation
 
+	const deleteQuotation = useSelector((state) => state.deleteQuotation)
+	const { deleted } = deleteQuotation
+
 	useEffect(() => {
 		dispatch(viewQuotations())
-	}, [dispatch])
+	}, [dispatch, deleted])
+
+	// delete Quotation
+	const deleteQ = (id) => {
+		if (window.confirm()) {
+			dispatch(deleteQuotationByID(id))
+		}
+	}
 
 	return (
 		<div className='container'>
@@ -35,6 +48,7 @@ const ViewAllQuotations = ({ history }) => {
 				<thead>
 					<tr>
 						<th>Sr.No.</th>
+						<th>Bill No.</th>
 						<th>Village , District</th>
 						<th>Date</th>
 						<th>Type</th>
@@ -46,15 +60,26 @@ const ViewAllQuotations = ({ history }) => {
 						quotationList.map((quotation, index) => (
 							<tr key={quotation._id}>
 								<td>{index + 1}</td>
+								<td>{quotation.billNo}</td>
 								<td>
 									{quotation.village} , {quotation.district}{' '}
 								</td>
 								<td>{quotation.createdAt}</td>
 								<td>{quotation.type}</td>
 								<td>
-									<Link to={`/print/${quotation._id}`} className='m-2'>
-										<button className='btn btn-success btn-block'>Print</button>
-									</Link>
+									<div className='d-flex '>
+										<Link to={`/print/${quotation._id}`} className='m-2 '>
+											<button className='btn btn-success btn-block'>
+												Print
+											</button>
+										</Link>
+										<button
+											className='btn btn-danger'
+											onClick={() => deleteQ(quotation._id)}
+										>
+											<i className='fas fa-trash text-light'></i>
+										</button>
+									</div>
 								</td>
 							</tr>
 						))}

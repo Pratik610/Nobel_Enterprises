@@ -3,6 +3,9 @@ import {
 	QUOTATION_CREATE_FAIL,
 	QUOTATION_CREATE_REQUEST,
 	QUOTATION_CREATE_SUCCESS,
+	QUOTATION_DELETE_BY_ID_FAIL,
+	QUOTATION_DELETE_BY_ID_REQUEST,
+	QUOTATION_DELETE_BY_ID_SUCCESS,
 	QUOTATION_GET_BY_ID_FAIL,
 	QUOTATION_GET_BY_ID_REQUEST,
 	QUOTATION_GET_BY_ID_SUCCESS,
@@ -75,6 +78,27 @@ export const getQuotation = (id) => async (dispatch) => {
 	} catch (error) {
 		dispatch({
 			type: QUOTATION_GET_BY_ID_FAIL,
+			payload:
+				error.response && error.response.data.message
+					? error.response.data.message
+					: error.message,
+		})
+	}
+}
+
+export const deleteQuotationByID = (id) => async (dispatch) => {
+	try {
+		dispatch({
+			type: QUOTATION_DELETE_BY_ID_REQUEST,
+		})
+		await axios.delete(`/api/quotation/${id}`)
+
+		dispatch({
+			type: QUOTATION_DELETE_BY_ID_SUCCESS,
+		})
+	} catch (error) {
+		dispatch({
+			type: QUOTATION_DELETE_BY_ID_FAIL,
 			payload:
 				error.response && error.response.data.message
 					? error.response.data.message

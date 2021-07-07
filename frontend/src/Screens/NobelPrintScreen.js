@@ -24,12 +24,8 @@ const NobelPrintScreen = ({ match }) => {
 		}
 	}
 
-	setTimeout(() => {
-		window.print()
-	}, 5000)
-
 	return (
-		<div className='container  nobel blue '>
+		<div className='container  nobel blue ' onClick={() => window.print()}>
 			<Helmet>
 				<meta charSet='utf-8' />
 				<title>Print Nobel</title>
@@ -40,12 +36,12 @@ const NobelPrintScreen = ({ match }) => {
 			{quotationInfo && (
 				<div className='row mt-2 border-blue    '>
 					{/* quotation header */}
-					<div className='col-sm-12 col-md-5 right-blue nobelTo  d-flex p-2 '>
-						<div className='pr-2 mt-2 ml-3'>To, </div>
+					<div className='col-sm-12 col-md-5 right-blue nobelTo   d-flex p-2 '>
+						<div className='pr-2 mt-2 ml-3 '>To, </div>
 						<div className='w-75 pl-1 mt-2'>
 							<p className='mb-2 bottom-blue'>{quotationInfo.to}</p>
 							<p className=' bottom-blue  mb-2'>
-								<span>{quotationInfo.village}</span>
+								<span>{quotationInfo.schoolName}</span>
 							</p>
 							<p className=' bottom-blue mb-2 '>
 								<span>{quotationInfo.district}</span>
@@ -56,7 +52,13 @@ const NobelPrintScreen = ({ match }) => {
 						<div className='   p-2 '>
 							<h4 className='text-center blue'>{quotationInfo.type}</h4>
 						</div>
-						<div className='  top-blue  p-2 '>No.</div>
+
+						<div className='  top-red  p-2 '>
+							No.{' '}
+							<h4 style={{ color: 'red' }} className='ml-2 d-inline'>
+								{quotationInfo.billNo}
+							</h4>
+						</div>
 						<div className=' top-blue p-2'>Date:</div>
 						<div className=' top-blue p-2'>
 							<h6 className='text-center blue'>GSTIN</h6>

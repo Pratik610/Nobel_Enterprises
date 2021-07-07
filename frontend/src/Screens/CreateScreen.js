@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Header from '../Components/Header.js'
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { v4 as uuidv4 } from 'uuid'
 import { createQuotation } from '../Actions/quotationActions.js'
@@ -10,28 +9,28 @@ import { QUOTATION_CREATE_RESET } from '../Constants/quotationConstants.js'
 const AddItemScreen = ({ history }) => {
 	const [items, setItems] = useState([])
 	const [item, setItem] = useState('')
+	const [billNo, setBillNo] = useState('')
 	const [type, setType] = useState('Quotation')
 	const [qty, setQty] = useState(1)
 	const [price, setPrice] = useState('')
 	const [district, setDistrict] = useState('')
-	const [village, setVillage] = useState('')
-	const [products, setProducts] = useState([])
+	const [schoolName, setSchoolName] = useState('')
+
 	const [to, setTo] = useState('मुख्याध्यापक')
 
 	// when to disable conditions
 	let dis = items.length === 0 ? true : false
 	let dis2 = type === 'Quotation' ? true : false
+	let quotationdisable =
+		item === ''
+			? true
+			: type === 'Quotation' && items.length < 25
+			? false
+			: type === 'Tax Invoice' && items.length < 20
+			? false
+			: true
 
 	const dispatch = useDispatch()
-
-	useEffect(() => {
-		const getProductsFromBackend = async () => {
-			const { data } = await axios.get('/api/products')
-			setProducts(data)
-		}
-
-		getProductsFromBackend()
-	}, [])
 
 	const userLogin = useSelector((state) => state.userLogin)
 	const { userInfo } = userLogin
@@ -91,8 +90,9 @@ const AddItemScreen = ({ history }) => {
 		const quoation = {
 			user: userInfo._id,
 			type: type,
+			billNo: Number(billNo),
 			to: to,
-			village,
+			schoolName,
 			district,
 			items: items,
 			totalPrice: total,
@@ -138,12 +138,12 @@ const AddItemScreen = ({ history }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor=''>Type</label>
+						<label htmlFor='type'>Type</label>
 						<select
 							className='form-control'
 							onChange={(e) => setType(e.target.value)}
 							name=''
-							id=''
+							id='type'
 						>
 							<option value='Quotation'>Quotation</option>
 							<option value='Tax Invoice'>Tax Invoice</option>
@@ -151,11 +151,26 @@ const AddItemScreen = ({ history }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor=''>To</label>
+						<label htmlFor='bno'>Bill No.</label>
+						<input
+							type='number'
+							name=''
+							id='bno'
+							required
+							onChange={(e) => setBillNo(e.target.value)}
+							value={billNo}
+							className='form-control'
+							placeholder=''
+							aria-describedby='helpId'
+						/>
+					</div>
+
+					<div className='form-group'>
+						<label htmlFor='to'>To</label>
 						<input
 							type='text'
 							name=''
-							id=''
+							id='to'
 							required
 							onChange={(e) => setTo(e.target.value)}
 							value={to}
@@ -165,14 +180,14 @@ const AddItemScreen = ({ history }) => {
 						/>
 					</div>
 					<div className='form-group'>
-						<label htmlFor=''>Village</label>
+						<label htmlFor='schoolName'>School Name</label>
 						<input
 							type='text'
 							name=''
-							id=''
+							id='schoolName'
 							required
-							onChange={(e) => setVillage(e.target.value)}
-							value={village}
+							onChange={(e) => setSchoolName(e.target.value)}
+							value={schoolName}
 							className='form-control'
 							placeholder=''
 							aria-describedby='helpId'
@@ -180,11 +195,11 @@ const AddItemScreen = ({ history }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor=''>District</label>
+						<label htmlFor='td'>Taluka & District</label>
 						<input
 							type='text'
 							name=''
-							id=''
+							id='td'
 							required
 							onChange={(e) => setDistrict(e.target.value)}
 							value={district}
@@ -195,27 +210,22 @@ const AddItemScreen = ({ history }) => {
 					</div>
 
 					<div className='form-group'>
-						<label htmlFor=''>Item</label>
+						<label htmlFor='item'>Item</label>
 						<input
 							type='text'
-							list='allitems'
+							id='item'
 							value={item}
 							onChange={(e) => setItem(e.target.value.trim())}
 							className='form-control mb-2 mr-sm-2'
 						/>
-						<datalist id='allitems'>
-							{products.map((i) => (
-								<option key={i._id} value={i.name} />
-							))}
-						</datalist>
 					</div>
 					<div className='row'>
 						<div className='form-group col-6'>
-							<label htmlFor=''>Quantity</label>
+							<label htmlFor='qty'>Quantity</label>
 							<input
 								type='text'
 								name=''
-								id=''
+								id='qty'
 								required
 								disabled={dis2}
 								onChange={(e) => setQty(e.target.value)}
@@ -226,11 +236,11 @@ const AddItemScreen = ({ history }) => {
 							/>
 						</div>
 						<div className='form-group col-6'>
-							<label htmlFor=''>Price</label>
+							<label htmlFor='price'>Price</label>
 							<input
 								type='number'
 								name=''
-								id=''
+								id='price'
 								onChange={(e) => setPrice(e.target.value)}
 								value={price}
 								className='form-control'
@@ -241,12 +251,14 @@ const AddItemScreen = ({ history }) => {
 					</div>
 					<button
 						type='button'
+						disabled={quotationdisable}
 						onClick={addItem}
 						className='btn btn-block btn-dark'
 					>
 						Add Item
 					</button>
 				</form>
+
 				{items.length > 0 ? (
 					<table className='table mt-2 table-dark table-responsive-sm table-bordered'>
 						<thead className='thead-dark'>

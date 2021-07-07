@@ -4,6 +4,7 @@ import CreateScreen from './Screens/CreateScreen.js'
 import CreateProductScreen from './Screens/CreateProductScreen.js'
 import AksharPrintScreen from './Screens/AksharPrintScreen.js'
 import NobelPrintScreen from './Screens/NobelPrintScreen.js'
+import EaglePrintScreen from './Screens/EaglePrintScreen.js'
 import ViewAllProducts from './Screens/ViewAllProducts.js'
 import LoginScreen from './Screens/LoginScreen.js'
 import ViewAllQuotations from './Screens/ViewAllQuotations.js'
@@ -17,6 +18,7 @@ function App() {
 			<Route path='/addproduct' component={CreateProductScreen} />
 			<Route path='/print/akshar/:id' component={AksharPrintScreen} />
 			<Route path='/print/nobel/:id' component={NobelPrintScreen} />
+			<Route path='/print/eagle/:id' component={EaglePrintScreen} />
 			<Route path='/viewproducts' component={ViewAllProducts} />
 			<Route path='/quotations' component={ViewAllQuotations} />
 			<Route path='/print/:id' exact component={PrintOptionScreen} />

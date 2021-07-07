@@ -9,6 +9,9 @@ import {
 	QUOTATION_GET_BY_ID_REQUEST,
 	QUOTATION_GET_BY_ID_SUCCESS,
 	QUOTATION_GET_BY_ID_FAIL,
+	QUOTATION_DELETE_BY_ID_REQUEST,
+	QUOTATION_DELETE_BY_ID_SUCCESS,
+	QUOTATION_DELETE_BY_ID_FAIL,
 } from '../Constants/quotationConstants.js'
 
 export const quotationCreateReducer = (state = {}, action) => {
@@ -46,6 +49,19 @@ export const quotationByIdReducer = (state = {}, action) => {
 		case QUOTATION_GET_BY_ID_SUCCESS:
 			return { loading: false, quotationInfo: action.payload }
 		case QUOTATION_GET_BY_ID_FAIL:
+			return { loading: false, error: action.payload }
+		default:
+			return state
+	}
+}
+
+export const deleteQuotationReducer = (state = {}, action) => {
+	switch (action.type) {
+		case QUOTATION_DELETE_BY_ID_REQUEST:
+			return { loading: true }
+		case QUOTATION_DELETE_BY_ID_SUCCESS:
+			return { loading: false, deleted: true }
+		case QUOTATION_DELETE_BY_ID_FAIL:
 			return { loading: false, error: action.payload }
 		default:
 			return state

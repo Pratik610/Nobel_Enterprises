@@ -4,7 +4,7 @@ import { getQuotation } from '../Actions/quotationActions.js'
 import { Helmet } from 'react-helmet'
 import { ToWords } from 'to-words'
 
-const AksharPrintScreen = ({ match }) => {
+const EaglePrintScreen = ({ match }) => {
 	const toWords = new ToWords()
 
 	const disptach = useDispatch()
@@ -26,10 +26,10 @@ const AksharPrintScreen = ({ match }) => {
 	}
 
 	return (
-		<div className='container  akshar red ' onClick={() => window.print()}>
+		<div className='container  eagle red ' onClick={() => window.print()}>
 			<Helmet>
 				<meta charSet='utf-8' />
-				<title>Print Akshar</title>
+				<title>Print Eagle</title>
 				<meta name='viewport' content='width=1024' />
 			</Helmet>
 			{loading && <h3>Loading...</h3>}
@@ -37,7 +37,7 @@ const AksharPrintScreen = ({ match }) => {
 			{quotationInfo && (
 				<div className='row mt-2 border-red    '>
 					{/* quotation header */}
-					<div className='col-sm-12 col-md-5 right-red aksharTo pt-4  d-flex p-2 '>
+					<div className='col-sm-12 col-md-5 right-red eagleTo pt-2  d-flex p-2 '>
 						<div className='pr-2 mt-2 ml-3'>To, </div>
 						<div className='w-75 pl-1 mt-2'>
 							<p className='mb-2 bottom-red'>{quotationInfo.to}</p>
@@ -51,30 +51,23 @@ const AksharPrintScreen = ({ match }) => {
 					</div>
 					<div className='col-sm-12 col-md-2 p-0  right-red   '>
 						<div className='   p-2 '>
-							<h4 className='text-center red'>{quotationInfo.type}</h4>
+							<h4 className='text-center red mt-2 '>{quotationInfo.type}</h4>
 						</div>
-						<div className='  top-red  p-2 '>
+						<div className=' top-red  p-2 '>
 							No.{' '}
 							<h4 style={{ color: 'red' }} className='ml-2 d-inline'>
 								{quotationInfo.billNo}
 							</h4>
 						</div>
-						<div className=' top-red p-2'>Date:</div>
-						<div className=' top-red p-2'>
-							<h6 className='text-center red'>GSTIN</h6>
-							<p className='d-block text-center'>27CXPPS4733N1ZI</p>
-						</div>
+						<div className=' top-red p-2 bottom-red'>Date:</div>
 					</div>
 					<div className='col-sm-12 col-md-5 p-2  '>
-						<h1 className='text-center mb-0 pb-0 Aksharname'>
-							अक्षर साहित्य भंडार
-						</h1>
-						{/* <h1 className='text-center mt-0 red '>ENTERPRISES</h1> */}
+						<h1 className='text-center mb-0 pb-0 Eaglename'>EaglE</h1>
+						<h1 className='text-center mt-0 red '>ENTERPRISES</h1>
 						<p className='text-center mb-0 text-capitalize'>
-							1ला मजला , निरंतर टावर , अंजली बिग सिनेमा / बँक ऑफ महाराष्ट्र समोर
-							, खडकेश्वर , औरंगाबाद - 431001
+							Opp.Anjali Big Cinema's , Khadkeshwar , Aurangabad
 						</p>
-						<p className='text-center mb-0'>मो. 9823215724</p>
+						<p className='text-center mb-1'>Mob. 9823215724 , 9823214724</p>
 					</div>
 					{/* Quotation header ends */}
 
@@ -136,17 +129,11 @@ const AksharPrintScreen = ({ match }) => {
 											</p>
 										</div>
 									</div>
-									<div className='col-2 top-red bottom-red right-red text-center'>
+									<div className='col-2 pt-1 top-red bottom-red right-red text-center'>
 										TOTAL
 									</div>
-									<div className='col-2  top-red bottom-red  text-center'>
+									<div className='col-2  pt-1 top-red bottom-red  text-center'>
 										{quotationInfo.totalPrice}
-									</div>
-									<div className='col-12 shopact bottom-red'>
-										<p className='p-0 m-0'>
-											SHOP ACT NO: SHOP/ABD/284/73563/2013/Dt.26/2/13
-											GSTIN:27BVCPS5158P1ZR
-										</p>
 									</div>
 
 									<div className='w-100 col-12  footer mb-0'>
@@ -167,7 +154,7 @@ const AksharPrintScreen = ({ match }) => {
 											</div>
 											<div className='p-1 col-3 left-red'>
 												<p className='pb-1 red text-center'>
-													Akshar Sahitya Bhandar
+													Eagle Enterprises
 												</p>
 												<p className='text-center mt-5'>Signature</p>
 											</div>
@@ -178,17 +165,16 @@ const AksharPrintScreen = ({ match }) => {
 						</div>
 
 						{quotationInfo.type === 'Quotation' ? (
-							<div className='w-100 col-12 d-flex justify-content-between footer mb-0'>
-								<div className='p-3'>
-									<h6 className='red'>नियम व अटी</h6>
-									<ol>
-										<li>दरपत्रक कालावधी 60 दिवस</li>
-										<li>दरावर नियमानुसार जी.एस.टी लागेल</li>
-									</ol>
+							<div className='w-100  col-12 d-flex justify-content-between footer mb-0'>
+								<div className=' pt-3'>
+									<ul className=''>
+										<li>VAT TIN NO. 27470127487-V-w.e.f.1-4-2006</li>
+										<li>CST IN NO. 27470127487-C-w.e.f.1-4-2006</li>
+									</ul>
 								</div>
-								<div className='p-3'>
-									<h5 className='pb-1 red'>Akshar Sahitya Bhandar</h5>
-									<p className='text-center mt-5'>Signature</p>
+								<div className=' pt-2 pr-2 '>
+									<h5 className='pb-1 mt-0 red'>Eagle Enterprises</h5>
+									<p className='text-center pt-1 d-block mt-5 '>Signature</p>
 								</div>
 							</div>
 						) : (
@@ -201,4 +187,4 @@ const AksharPrintScreen = ({ match }) => {
 	)
 }
 
-export default AksharPrintScreen
+export default EaglePrintScreen

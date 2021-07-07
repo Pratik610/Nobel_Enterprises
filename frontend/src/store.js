@@ -11,6 +11,7 @@ import {
 	quotationCreateReducer,
 	viewAllQuotationReducer,
 	quotationByIdReducer,
+	deleteQuotationReducer,
 } from './Reducers/quotationReducers.js'
 
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ const reducer = combineReducers({
 	quotationCreate: quotationCreateReducer,
 	viewAllQuotation: viewAllQuotationReducer,
 	quotationById: quotationByIdReducer,
+	deleteQuotation: deleteQuotationReducer,
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

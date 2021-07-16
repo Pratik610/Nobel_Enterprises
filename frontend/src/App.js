@@ -5,6 +5,12 @@ import CreateProductScreen from './Screens/CreateProductScreen.js'
 import AksharPrintScreen from './Screens/AksharPrintScreen.js'
 import NobelPrintScreen from './Screens/NobelPrintScreen.js'
 import EaglePrintScreen from './Screens/EaglePrintScreen.js'
+import PratikshaPrintScreen from './Screens/PratikshaPrintScreen.js'
+import MaharashtraPrintScreen from './Screens/MaharashtraPrintScreen.js'
+import GovindPrintScreen from './Screens/GovindPrintScreen.js'
+import RahulPrintScreen from './Screens/RahulPrintScreen.js'
+import RohitPrintScreen from './Screens/RohitPrintScreen.js'
+import SahyadriPrintScreen from './Screens/SahyadriPrintScreen.js'
 import ViewAllProducts from './Screens/ViewAllProducts.js'
 import LoginScreen from './Screens/LoginScreen.js'
 import ViewAllQuotations from './Screens/ViewAllQuotations.js'
@@ -19,6 +25,12 @@ function App() {
 			<Route path='/print/akshar/:id' component={AksharPrintScreen} />
 			<Route path='/print/nobel/:id' component={NobelPrintScreen} />
 			<Route path='/print/eagle/:id' component={EaglePrintScreen} />
+			<Route path='/print/pratiksha/:id' component={PratikshaPrintScreen} />
+			<Route path='/print/maharashtra/:id' component={MaharashtraPrintScreen} />
+			<Route path='/print/sahyadri/:id' component={SahyadriPrintScreen} />
+			<Route path='/print/govind/:id' component={GovindPrintScreen} />
+			<Route path='/print/rahul/:id' component={RahulPrintScreen} />
+			<Route path='/print/rohit/:id' component={RohitPrintScreen} />
 			<Route path='/viewproducts' component={ViewAllProducts} />
 			<Route path='/quotations' component={ViewAllQuotations} />
 			<Route path='/print/:id' exact component={PrintOptionScreen} />

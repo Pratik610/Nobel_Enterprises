@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karma:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap');
+.text-danger {
+	color: red !important;
+}
 .nobel {
 	font-weight: 900 !important;
 	color: rgb(143, 61, 163) !important;
@@ -50,7 +53,7 @@
 	border-left: 2px solid rgb(143, 61, 163);
 }
 
-/* ................................................................... */
+/* .........................Akshar.......................................... */
 
 .akshar {
 	font-weight: 900 !important;
@@ -89,7 +92,7 @@
 	border-left: 2px solid rgb(119, 23, 31);
 }
 
-/* ................................................ */
+/* ...................Eagle............................. */
 
 .eagle {
 	font-weight: 900 !important;
@@ -126,4 +129,221 @@
 }
 .left-red {
 	border-left: 2px solid rgb(119, 23, 31);
+}
+
+/* ...................Pratiksha............................. */
+
+.pratiksha {
+	font-weight: 900 !important;
+	color: rgb(119, 23, 31) !important;
+}
+
+.pratikshaname {
+	font-size: 55px;
+	font-weight: 900;
+	color: rgb(119, 23, 31);
+}
+.pratikshaTo {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.pratiksha-table-items {
+	width: 200vw;
+	font-size: 20px;
+}
+
+.brown {
+	color: rgb(119, 23, 31);
+}
+
+.border-brown {
+	border: 2px solid brown;
+	border-radius: 10px;
+}
+.bottom-brown {
+	border-bottom: 2px solid brown;
+}
+.top-brown {
+	border-top: 2px solid brown;
+}
+.right-brown {
+	border-right: 2px solid brown;
+}
+.left-brown {
+	border-left: 2px solid brown;
+}
+
+/* ...................Maharashtra............................. */
+
+.maha {
+	font-weight: 900 !important;
+	color: #782913 !important;
+}
+
+.mahaname {
+	font-size: 55px;
+	font-weight: 900;
+	color: #782913;
+}
+.mahaTo {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.mahacolor {
+	color: #782913;
+}
+
+.maha-table-items {
+	width: 200vw;
+	font-size: 21px;
+}
+
+.maha-border {
+	border: 2px solid #782913;
+	border-radius: 10px;
+}
+.bottom-maha {
+	border-bottom: 2px solid #782913;
+}
+.top-maha {
+	border-top: 2px solid #782913;
+}
+.right-maha {
+	border-right: 2px solid #782913;
+}
+.left-maha {
+	border-left: 2px solid #782913;
+}
+
+/* ...................Sahyadri............................. */
+
+.sahyadri {
+	font-weight: 900 !important;
+	color: #782913 !important;
+}
+
+.sahyadriname {
+	font-size: 55px;
+	font-weight: 900;
+	color: #782913;
+}
+.sahyadriTo {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.sahyadrilor {
+	color: #782913;
+}
+
+.sahyadri-table-items {
+	width: 200vw;
+	font-size: 21px;
+}
+
+.sahyadri-border {
+	border: 2px solid #782913;
+	border-radius: 10px;
+}
+.bottom-sahyadri {
+	border-bottom: 2px solid #782913;
+}
+.top-sahyadri {
+	border-top: 2px solid #782913;
+}
+.right-sahyadri {
+	border-right: 2px solid #782913;
+}
+.left-sahyadri {
+	border-left: 2px solid #782913;
+}
+
+/* ...................Rohit............................. */
+
+.rohit {
+	font-weight: 900 !important;
+	color: #782913 !important;
+}
+
+.rohitname {
+	font-size: 40px;
+	font-weight: 900;
+
+	color: #782913;
+}
+.rohitTo {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.rohitcolor {
+	color: #782913;
+}
+
+.rohit-table-items {
+	width: 200vw;
+	font-size: 21px;
+}
+
+.rohit-border {
+	border: 2px solid #782913;
+	border-radius: 10px;
+}
+.bottom-rohit {
+	border-bottom: 2px solid #782913;
+}
+.top-rohit {
+	border-top: 2px solid #782913;
+}
+.right-rohit {
+	border-right: 2px solid #782913;
+}
+.left-rohit {
+	border-left: 2px solid #782913;
+}
+
+/* ...................Rahul............................. */
+
+.rahul {
+	font-weight: 900 !important;
+	font-family: 'Hind', sans-serif;
+	color: #782913 !important;
+}
+
+.rahulname {
+	font-size: 50px;
+	font-weight: 900;
+	color: #782913;
+}
+.rahulTo {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.rahulcolor {
+	color: #782913;
+}
+
+.rahul-table-items {
+	width: 200vw;
+	font-size: 21px;
+}
+
+.rahul-border {
+	border: 2px solid #782913;
+	border-radius: 10px;
+}
+.bottom-rahul {
+	border-bottom: 2px solid #782913;
+}
+.top-rahul {
+	border-top: 2px solid #782913;
+}
+.right-rahul {
+	border-right: 2px solid #782913;
+}
+.left-rahul {
+	border-left: 2px solid #782913;
 }

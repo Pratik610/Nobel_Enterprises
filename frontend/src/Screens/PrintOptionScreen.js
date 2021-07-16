@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Header from '../Components/Header.js'
 import { Helmet } from 'react-helmet'
-import Footer from '../Components/Footer.js'
 
 const HomeScreen = ({ history, match }) => {
 	const id = match.params.id
@@ -62,8 +61,47 @@ const HomeScreen = ({ history, match }) => {
 						Pratiksha
 					</button>
 				</Link>
+				<Link to={`/print/maharashtra/${id}`} className='m-2'>
+					<button
+						style={{ background: '#cf4404' }}
+						className='btn text-light btn-block'
+					>
+						Maharashtra
+					</button>
+				</Link>
+				<Link to={`/print/sahyadri/${id}`} className='m-2'>
+					<button
+						style={{ background: '#30211d' }}
+						className='btn text-light btn-block'
+					>
+						Sahyadri
+					</button>
+				</Link>
+				<Link to={`/print/govind/${id}`} className='m-2'>
+					<button
+						style={{ background: '#2a3685' }}
+						className='btn text-light btn-block'
+					>
+						Govind
+					</button>
+				</Link>
+				<Link to={`/print/rohit/${id}`} className='m-2'>
+					<button
+						style={{ background: '#191d24' }}
+						className='btn text-light btn-block'
+					>
+						Rohit
+					</button>
+				</Link>
+				<Link to={`/print/rahul/${id}`} className='m-2'>
+					<button
+						style={{ background: '#3362a3' }}
+						className='btn text-light btn-block'
+					>
+						Rahul
+					</button>
+				</Link>
 			</div>
-			<Footer />
 		</div>
 	)
 }

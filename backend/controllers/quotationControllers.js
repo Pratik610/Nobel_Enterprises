@@ -35,3 +35,15 @@ export const getQuotation = asyncHandler(async (req, res) => {
 		throw new Error('Something Went Wrong')
 	}
 })
+
+export const deleteQuotationByID = asyncHandler(async (req, res) => {
+	const quotation = await Quotation.findById(req.params.id)
+
+	if (quotation) {
+		await quotation.remove()
+		res.json({ message: 'Quotation Removed' })
+	} else {
+		res.status(404)
+		throw new Error('Quotation Not Found')
+	}
+})

@@ -11,11 +11,14 @@ const quotationSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		billNo: {
+			type: Number,
+		},
 		to: {
 			type: String,
 			required: true,
 		},
-		village: {
+		schoolName: {
 			type: String,
 			required: true,
 		},

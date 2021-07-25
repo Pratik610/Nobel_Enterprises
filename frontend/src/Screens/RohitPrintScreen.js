@@ -87,7 +87,7 @@ const RohitPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-5 text-center top-rohit right-rohit p-1'>
+										<div className='col-5 text-left top-rohit right-rohit p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-rohit  right-rohit p-1'>

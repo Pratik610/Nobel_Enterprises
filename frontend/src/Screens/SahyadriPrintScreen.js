@@ -96,7 +96,7 @@ const SahyadriPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-6 text-center top-sahyadri right-sahyadri p-1'>
+										<div className='col-6 text-left top-sahyadri right-sahyadri p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-sahyadri  right-sahyadri p-1'>

@@ -90,7 +90,7 @@ const PratikshaPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-5 text-center top-brown right-brown p-1'>
+										<div className='col-5 text-left top-brown right-brown p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-brown  right-brown p-1'>

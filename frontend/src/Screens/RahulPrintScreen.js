@@ -91,7 +91,7 @@ const RahulPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-6 text-center top-rahul right-rahul p-1'>
+										<div className='col-6 text-left top-rahul right-rahul p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-rahul  right-rahul p-1'>

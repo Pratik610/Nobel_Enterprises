@@ -102,7 +102,7 @@ const MaharashtraPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-5 text-center top-maha right-maha p-1'>
+										<div className='col-5 text-left top-maha right-maha p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-maha  right-maha p-1'>

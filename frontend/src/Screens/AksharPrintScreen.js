@@ -95,7 +95,7 @@ const AksharPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-5 text-center top-red right-red p-1'>
+										<div className='col-5 text-left top-red right-red p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-red  right-red p-1'>

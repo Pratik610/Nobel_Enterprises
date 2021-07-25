@@ -95,7 +95,7 @@ const NobelPrintScreen = ({ match }) => {
 										>
 											{index + 1}
 										</div>
-										<div className='col-5 text-center top-blue right-blue p-1'>
+										<div className='col-5 text-left top-blue right-blue p-1'>
 											{i.itemName}
 										</div>
 										<div className='col-2 text-center top-blue  right-blue p-1'>
